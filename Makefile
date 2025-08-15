@@ -6,11 +6,9 @@ TARGET = main
 
 INCLUDE = -I/home/elan/dev/libs/libcurl/curl/include
 LINKLIB = -L/home/elan/dev/libs/libcurl/curl/lib
-
-all: $(TARGET)
+LDFLAGS = -lcurl
 
 $(TARGET): $(SOURCES)
-	$(CC) $(CFLAGS) $(SOURCES) $(INCLUDE) -o $(TARGET) $(LINKLIB)
-
+	$(CC) $(CFLAGS) $(SOURCES) $(INCLUDE) -o $(TARGET) $(LINKLIB) $(LDFLAGS)
 clean:
 	rm -rf $(TARGET)
