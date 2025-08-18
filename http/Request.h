@@ -3,6 +3,7 @@
 
 typedef struct REQUEST
 {
+    char * category; // like is it email, weather, etc.
     char * url; // with query params
 
     // will likely need more functionality for request bodies
@@ -11,8 +12,5 @@ typedef struct REQUEST
 
 Request * create();
 void destroy(Request * req);
-
-void addParam(Request * req, char * key, char * value);
-void addParamString(Request * req, char * param);
 
 #endif
