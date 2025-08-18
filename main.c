@@ -23,7 +23,7 @@ int main()
         exit(EXIT_FAILURE);
     }
 
-    Response * resp = create();
+    Response * resp = createResponse();
 
     curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION, writeChunk);
     curl_easy_setopt(curl, CURLOPT_WRITEDATA, (void *) resp);
@@ -42,7 +42,7 @@ int main()
     
     printf("%s\n", resp->string);
 
-    destroy(resp);
+    destroyResponse(resp);
     curl_easy_cleanup(curl);
 
     return 0;

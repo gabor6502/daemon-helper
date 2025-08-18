@@ -10,8 +10,8 @@ typedef struct RESPONSE
     size_t size;
 } Response;
 
-Response * create();
-void destroy(Response * res);
+Response * createResponse();
+void destroyResponse(Response * res);
 
 int appendChunk(Response * resp, size_t chunk_size, void * data_block_in);
 

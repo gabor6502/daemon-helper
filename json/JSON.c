@@ -1,32 +1,16 @@
 #include <stdio.h>
 
+#include "stack/Stack.h"
 #include "JSON.h"
 
-static char * readFile(const char * bfFile)
+Json * createJSON(const char *)
 {
-    char * contents;
-    int length;
-    FILE * file;
+    Json * json = 0;
 
-    file = fopen(bfFile, "rb");
+    return json;
+}
 
-    if (file)
-    {
-        fseek(file, 0, SEEK_END);
-        length = ftell(file);
-        
-        contents = (char*) malloc(sizeof(char) * length);
+void destroyJSON(Json * json)
+{
 
-        fseek(file, 0, SEEK_SET);
-        fread(contents, 1, length, file);
-
-        fclose(file);
-    }
-    else 
-    {
-        fprintf(stderr, "Couldn't open file %s\n", bfFile);
-        contents = NULL;
-    }
-
-    return contents;
 }

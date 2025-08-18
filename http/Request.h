@@ -10,7 +10,7 @@ typedef struct REQUEST
 
 } Request;
 
-Request * create();
-void destroy(Request * req);
+Request * createRequest();
+void destroyRequest(Request * req);
 
 #endif

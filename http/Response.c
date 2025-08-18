@@ -6,7 +6,7 @@
 
 #include "Response.h"
 
-Response * create()
+Response * createResponse()
 {
     Response * new = (Response *) malloc(sizeof(Response));
     assert(new != NULL);
@@ -19,7 +19,7 @@ Response * create()
     return new;
 }
 
-void destroy(Response * resp)
+void destroyResponse(Response * resp)
 {
     assert(resp != NULL);
     assert(resp->string != NULL);

@@ -14,8 +14,12 @@ RESPONSE_C = ./http/Response.c
 JSON_H = ./json/JSON.h
 JSON_C = ./json/JSON.c
 
+STACK_H = ./json/stack/Stack.h
+STACK_C = ./json/stack/Stack.c
+STACK_O = ./json/stack/Stack.o
+
 #Request.o - add in when working
-OBJS = Response.o JSON.o
+OBJS = Response.o JSON.o Stack.o
 
 # to turn off debugging for release:
 #-dNDEBUG
@@ -31,9 +35,11 @@ $(TARGET): $(OBJS)
 Response.o: $(RESPONSE_H) $(RESPONSE_C)
 	$(CC) $(CFLAGS) -c $(RESPONSE_C)
 
-JSON.o : $(JSON_H) $(JSON_C)
+JSON.o : $(JSON_H) $(JSON_C) #$(STACK_O)
 	$(CC) $(CFLAGS) -c $(JSON_C)
 
+Stack.o: $(STACK_H) $(STACK_C)
+	$(CC) $(CFLAGS) -c $(STACK_C)
 
 clean:
 	rm -rf $(TARGET)

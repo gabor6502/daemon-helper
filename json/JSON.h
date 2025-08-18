@@ -44,6 +44,9 @@ typedef union JSON_ELEMENT
 typedef union JSON
 {
     JsonElement * root; // pointer to root of json strcuture
-} json;
+} Json;
+
+Json * createJSON(const char * jsonString);
+void destroyJSON(Json * json);
 
 #endif
