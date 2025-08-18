@@ -11,8 +11,11 @@ LDFLAGS = -lcurl
 RESPONSE_H = ./http/Response.h
 RESPONSE_C = ./http/Response.c
 
+JSON_H = ./json/JSON.h
+JSON_C = ./json/JSON.c
+
 #Request.o - add in when working
-OBJS = Response.o 
+OBJS = Response.o JSON.o
 
 # to turn off debugging for release:
 #-dNDEBUG
@@ -27,6 +30,10 @@ $(TARGET): $(OBJS)
 
 Response.o: $(RESPONSE_H) $(RESPONSE_C)
 	$(CC) $(CFLAGS) -c $(RESPONSE_C)
+
+JSON.o : $(JSON_H) $(JSON_C)
+	$(CC) $(CFLAGS) -c $(JSON_C)
+
 
 clean:
 	rm -rf $(TARGET)

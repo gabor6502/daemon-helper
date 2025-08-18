@@ -7,6 +7,7 @@
 #include <assert.h>
 
 #include "http/Response.h"
+#include "json/JSON.h"
 
 size_t writeChunk(void * data, size_t size, size_t bytes_in_block, void * userData);
 
@@ -28,7 +29,7 @@ int main()
     curl_easy_setopt(curl, CURLOPT_WRITEDATA, (void *) resp);
 
     // test getting sunrise and sunset times for Winnipeg
-    curl_easy_setopt(curl, CURLOPT_URL, "https://api.sunrise-sunset.org/json?lat=49.8951&lng=-97.1384");
+    curl_easy_setopt(curl, CURLOPT_URL, "https://api.sunrise-sunset.org/json?lat=49.8951&lng=-97.1384&tzid=America/Winnipeg");
     //curl_easy_setopt(curl, CURLOPT_URL, "https://www.google.com"); // will send hella chunks!
 
     code = curl_easy_perform(curl);
