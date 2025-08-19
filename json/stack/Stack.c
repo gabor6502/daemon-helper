@@ -51,7 +51,7 @@ void push(void * data, Stack * stack)
         return;
     }
 
-    Node * newTop = createNode(data);
+    Node * newTop = (Node *) malloc(sizeof(Node));
 
     assert(newTop != NULL);
     if (newTop == NULL)

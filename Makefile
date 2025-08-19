@@ -16,7 +16,7 @@ JSON_C = ./json/JSON.c
 
 STACK_H = ./json/stack/Stack.h
 STACK_C = ./json/stack/Stack.c
-STACK_O = ./json/stack/Stack.o
+STACK_O = Stack.o
 
 #Request.o - add in when working
 OBJS = Response.o JSON.o Stack.o
@@ -35,7 +35,7 @@ $(TARGET): $(OBJS)
 Response.o: $(RESPONSE_H) $(RESPONSE_C)
 	$(CC) $(CFLAGS) -c $(RESPONSE_C)
 
-JSON.o : $(JSON_H) $(JSON_C) #$(STACK_O)
+JSON.o : $(JSON_H) $(JSON_C) 
 	$(CC) $(CFLAGS) -c $(JSON_C)
 
 Stack.o: $(STACK_H) $(STACK_C)
