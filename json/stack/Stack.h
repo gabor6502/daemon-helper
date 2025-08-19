@@ -18,4 +18,6 @@ void destroyStack(Stack * stack);
 void push(void * data, Stack * stack);
 void * pop(Stack * stack);
 
+int isEmpty(Stack * stack);
+
 #endif
